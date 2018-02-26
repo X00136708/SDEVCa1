@@ -1,0 +1,28 @@
+@(venueForm: Form[models.Venues], user: models.users.User)
+
+@import helper._
+<!--Brandon did this page-->
+@temp("Add Venue", user) {
+<p class="lead">Add or update a new venue</p>
+
+    @form(action=routes.HomeController.addVenueSubmit(), 'class -> "form-horizontal", 'role -> "form") {
+    
+    @CSRF.formField
+
+    @inputText(venueForm("name"), '_label -> "Name", 'class -> "form-control")
+    @inputText(venueForm("country"), '_label -> "Country", 'class -> "form-control")
+    @inputText(venueForm("city"), '_label -> "City", 'class -> "form-control")
+    @inputText(venueForm("capacity"), '_label -> "Capacity", 'class -> "form-control")
+
+    @inputText(venueForm("id"), '_label -> "", 'hidden -> "hidden")
+
+    <div class="actions">
+
+        <input type="submit" value="Add/Update Venue" class="btn btn-primary">
+        <a href="@routes.HomeController.venues">
+            <button type="button" class="btn btn-warning">Cancel</button>
+        </a>
+
+    </div>
+}
+}

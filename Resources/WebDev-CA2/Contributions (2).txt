@@ -1,0 +1,3 @@
+Brandon:	Play framework development. Implemented dynamic content which incuded automatically calling on our template page which held they addresses for each label on the panel at the home page.
+Ronan:		Researched all the information regarding positioning of HTML elements, CSS and BootStrap. Helped locate the right acticles which are used throughout the website. Formatted each html page exluding index to align and attempt to fix resizing issues and margins.
+Nathan: 	Aided in the design choices and colours. Identified the types of pages neccesary.

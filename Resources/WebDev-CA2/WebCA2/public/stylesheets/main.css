@@ -1,0 +1,100 @@
+.content {
+    padding: 1em;
+    display: block;
+    margin: auto;
+    
+}
+form {
+    padding: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    border-radius: 1em;
+    border: 1px solid black;
+    background-color: #303030;
+    margin: auto;
+    color: white;
+    width: 300px;
+	font-size: 15px;
+	
+}
+.footer {
+    
+        color: grey;
+        font-size: 16px;
+        color: black;
+        width: 98%;
+        margin-left: 1%;
+        margin-bottom: 5%;
+        
+    }
+  
+        
+    .footer img{
+        width: 99.5%;
+        height: 20em;
+        
+        
+        border: .1em solid white;
+        border-radius:.5em;
+    }
+   
+    .footerprofile {
+    
+        color: grey;
+        font-size: 16px;
+        color: black;
+        width: 98%;
+        margin-left: 1%;
+        margin-bottom: 5%;
+        
+    }
+    .footerprofile img{
+        width: 72%;
+        margin-left: 14%;
+        height: 20em;
+        
+        
+        
+        border: .1em solid white;
+        border-radius:.5em;
+    }
+    nav {
+        margin-left: 10%;
+        margin-right: 2.3%;
+    }
+    
+    img {
+        height: 50px;
+    }
+    body {
+        background-color: #282c39;
+        overflow: auto;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    p {
+        color: white;
+        text-align: center;
+    }
+    input.search {
+        background-color: black;
+        color: white;
+        border: .1em solid white;
+    }
+    
+    input::placeholder {
+        color: white;
+    }
+    
+    .container-fluid a {
+        background-color: #7e7e7e;
+    }
+    
+    .navbar-inverse .navbar-nav li a {
+        color: white;
+    }
+    
+    .navbar-inverse .navbar-brand {
+        color: white;
+    }

@@ -1,0 +1,129 @@
+@(events: List[models.Events], categories: List[models.Category], user: models.users.User)
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script data-require="jquery@@3.0.0" data-semver="3.0.0" src="/assets/javascripts/jquery.js"></script>
+        <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+        <link data-require="bootstrap-css@@3.3.6" data-semver="3.3.6" rel="stylesheet" href="/assets/bootstrap/css/bootstrap.css" />
+        <link data-require="bootstrap@@3.3.6" data-semver="3.3.6" rel="stylesheet" href="/assets/bootstrap/css/bootstrap.css" />
+        <link rel="stylesheet" href="/assets/stylesheets/style.css" />
+        <script  type="text/javascript" src="/assets/bootstrap/js/bootstrap.js"></script>
+    </head>
+
+    
+
+<body>
+    <!--Ronan did this page-->
+    <!--Brandon did the tables & db-->
+    <title>Events</title>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <img src ="/assets/images/logo.png">
+            </div>
+            <ul class="nav navbar-nav"><li><a href="/"><font color="#d3d3d3"; size="3">Ticket Shark |</font></a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/venues">Venues</a></li>
+                <li class="active"><a href="/events">Events</a></li>
+                <li><a href="/aboutus">About us</a></li>
+                @if(user != null ){
+                    <li><a href="/profile">My Profile</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                    
+                    } else {
+                    <li><a href="/login">Login</a></li>    
+                    }
+                
+    </nav>
+
+    <div class="container">
+
+        @if(flash.containsKey("success")){
+            <div class="alert alert-success">
+              @flash.get("success")
+            </div>
+        }
+  
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="well main">
+
+                    
+
+                    <table class="table table-bordered table-condensed">
+                        
+                        <thead>
+                        
+                        <!-- The header row-->
+                        
+                        <tr>
+                        
+                        <th>ID</th>
+                        
+                        <th>Name</th>
+                      
+                        <th>Category</th>
+                        
+                        <th>Venue</th>
+                        
+                        <th>Date</th>
+                        
+                        <th>Price</th>
+                        
+                        </tr>
+                        
+                        </thead>
+                        
+                        <tbody>
+                        
+                        <!-- Product row(s) -->
+                        @for(e<-events) {
+                        <tr>
+                        
+                        <td>@e.getId</td>
+                        
+                        <td>@e.getName</td>
+                      
+                        <td>@e.getCategory.getName</td>
+                        
+                        <td>@e.getVenue</td>
+                        
+                        <td>@e.getDate</td>
+                      
+                        <td class="numeric">&euro; @("%.0f".format(e.getPrice))</td>
+                            @if(user != null){
+                        <td>
+                          <a href="@routes.HomeController.updateEvent(e.getId)" class="button-xs btn-danger" onclick="return confirmDel();">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                          </a>
+                        </td>
+                      
+                        <td>
+                          <a href="@routes.HomeController.deleteEvent(e.getId)" class="button-xs btn-danger" onclick="return confirmDel();">
+                            <span class="glyphicon glyphicon-trash"></span>
+                          </a>
+                        </td>
+                            }
+                        </tr>
+                      }
+                        
+                        </tbody>
+                        
+                        </table>
+                        @if(user != null){
+                        <p>
+                            <a href="@routes.HomeController.addEvent()">
+                                <button class="btn btn-primary">Add a event</button>
+                            </a>
+                        }
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <img src="/assets/images/Concert.jpg">
+            </img></div>
+            <script src="@routes.Assets.versioned("javascripts/main.js")"></script>
+</body>
+</html>
