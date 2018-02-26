@@ -1,5 +1,0 @@
-Fixed the update and add functionality for the events database, added venues to the database. 
-
-Still need to add the relationship between Events and Venues but for right now everything works. redid some HTML and CSS for the temp and index pages. 
-
-Will start working on the login and authentication stuff and the event-venue relation either tomorrow or soon
